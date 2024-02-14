@@ -4,7 +4,7 @@ Decode the asn1 in docx
 
 ```sh
 # download the docx
-cd ~/Download
+cd ~/Downloads
 python decode_asn1.py
 ```
 
