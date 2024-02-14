@@ -1,2 +1,3 @@
-# 3gpp_as1n
-Decode the as1n in docx
+# 3gpp_asn1
+
+Decode the asn1 in docx
