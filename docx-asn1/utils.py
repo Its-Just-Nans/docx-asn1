@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 from docx import Document
 from sys import argv
 
@@ -23,7 +20,7 @@ def extract_text_from_docx(filename):
     return "\n".join(full_text)
 
 
-if __name__ == "__main__":
+def main():
     # Get the first .docx file name in the current directory
     # check argv[1] to get the path
     if len(argv) < 2:

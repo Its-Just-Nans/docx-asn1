@@ -1,1 +1,5 @@
+docx_asn1.egg-info/
+dist/
+__pycache__/
+
 *.docx
