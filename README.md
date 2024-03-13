@@ -1,4 +1,4 @@
-# 3gpp_asn1
+# docx-asn1
 
 Decode `asn1` from a docx file. Question for @3gpp: why `docx` from for the specification ?
 
