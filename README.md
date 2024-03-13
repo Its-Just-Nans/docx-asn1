@@ -1,13 +1,21 @@
 # 3gpp_asn1
 
-Decode the asn1 in docx
+Decode `asn1` from a docx file. Question for @3gpp: why `docx` from for the specification ?
+
+## CLI
 
 ```sh
 # download the docx
-
-python decode_asn1.py file.docx output.asn1
+python -m pip install docx_asn1
+python -m docx_asn1 file.docx output.asn1
 # or
-python decode_asn1.py file.docx > output.asn1
+python -m docx_asn1 file.docx > output.asn1
 ```
 
-Question for @3gpp: why `docx` from for the specification ?
+## Python usage
+
+```python
+from docx_asn1 import extract_text_from_docx
+
+asn1 = extract_text_from_docx("file.docx")
+```
