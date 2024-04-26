@@ -3,7 +3,9 @@ from sys import argv, stderr
 from os.path import isfile
 
 
-def extract_text_from_docx(filename):
+def extract_text_from_docx(
+    filename, start_text="-- ASN1START", stop_text="-- ASN1STOP"
+):
     """extract asn1 from a docx file"""
     if not isfile(filename):
         print(f"File {filename} not found", file=stderr)
@@ -12,10 +14,11 @@ def extract_text_from_docx(filename):
     full_text = []
     inside_range = False
     for para in doc.paragraphs:
-        if "-- ASN1START" in para.text:
+        if start_text in para.text:
             inside_range = True
             continue
-        elif "-- ASN1STOP" in para.text:
+        elif stop_text in para.text:
+            full_text.append(para.text)
             inside_range = False
             continue
 
