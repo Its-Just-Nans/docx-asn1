@@ -4,7 +4,7 @@ from os.path import isfile
 
 
 def extract_text_from_docx(
-    filename, start_text="-- ASN1START", stop_text="-- ASN1STOP"
+    filename, start_text="-- ASN1START", stop_text="-- ASN1STOP", add=False
 ):
     """extract asn1 from a docx file"""
     if not isfile(filename):
@@ -14,11 +14,14 @@ def extract_text_from_docx(
     full_text = []
     inside_range = False
     for para in doc.paragraphs:
-        if start_text in para.text:
+        if para.text.startswith(start_text):
+            if add:
+                full_text.append(para.text)
             inside_range = True
             continue
-        elif stop_text in para.text:
-            full_text.append(para.text)
+        elif para.text.startswith(stop_text):
+            if add:
+                full_text.append(para.text)
             inside_range = False
             continue
 

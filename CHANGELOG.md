@@ -3,11 +3,11 @@
 ## Create a new version
 
 ```sh
-rm -rf dist/ build/
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade build
-python3 -m build
 python3 -m pip install --upgrade twine
+rm -rf dist/ build/
+python3 -m build
 # create egg-info folder
 python3 -m twine upload dist/* --verbose
 # use __token__ auth
