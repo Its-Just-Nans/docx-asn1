@@ -1,6 +1,20 @@
 from docx import Document
+from docx.oxml.ns import qn
+from docx.text.run import Run
 from sys import argv, stderr
 from os.path import isfile
+
+tab = qn("w:tab")
+
+
+def extract_paragraph(paragraph):
+    p = paragraph._element
+    # ---use XPath to get all the w:r descendents, wherever they may be---
+    rs = p.xpath(".//w:r")
+    # ---generate a Run object for each w:r element, in document order---
+    # for r in rs:
+    txt = "".join(["\t" if r.tag == tab else r.text for r in rs])
+    return txt
 
 
 def extract_text_from_docx(
@@ -14,20 +28,21 @@ def extract_text_from_docx(
     full_text = []
     inside_range = False
     for para in doc.paragraphs:
-        if para.text.startswith(start_text):
+        text = extract_paragraph(para)
+        if text.startswith(start_text):
             if add:
-                full_text.append(para.text)
+                full_text.append(text)
             inside_range = True
             continue
-        elif para.text.startswith(stop_text):
+        elif text.startswith(stop_text):
             if add:
-                full_text.append(para.text)
+                full_text.append(text)
             inside_range = False
             continue
 
         # Add the paragraph text if inside the desired range
         if inside_range:
-            full_text.append(para.text)
+            full_text.append(text)
     return "\n".join(full_text)
 
 

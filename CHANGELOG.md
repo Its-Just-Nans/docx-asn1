@@ -14,6 +14,11 @@ python3 -m twine upload dist/* --verbose
 # enter token
 ```
 
+## 2024-05-30
+
+- add test (`python -m pytest`)
+- fix asn1 output - docx package does not handle smarttags
+
 ## 2024-04-26
 
 - add custom start and end
