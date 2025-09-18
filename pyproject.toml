@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docx-asn1"
-version = "1.0.9"
+version = "1.0.10"
 description = "Extract ASN.1 from DOCX files"
 readme = "README.md"
 authors = [{ name = "n4n5", email = "its.just.n4n5@gmail.com" }]
@@ -18,6 +18,7 @@ classifiers = [
 ]
 keywords = ["asn1", "docx", "extract", "asn1tools", "3gpp"]
 requires-python = ">=3.6"
+dependencies = ["python-docx"]
 
 [project.urls]
 Homepage = "https://github.com/its-just-nans/docx-asn1"
