@@ -1,6 +1,9 @@
 # docx-asn1 [![version](https://img.shields.io/pypi/v/docx-asn1)](https://pypi.org/project/docx-asn1/)
 
-Decode `asn1` from a docx file. Question for @3gpp: why `docx` from for the specification ?
+Decode `asn1` from a docx file.
+
+- question for @3gpp: why `docx` from for the specification ?
+- 3GPP ASN.1 available here <https://github.com/tramex/types_lte_3gpp/tree/main/asn>
 
 ## CLI
 
