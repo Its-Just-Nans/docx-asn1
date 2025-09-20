@@ -2,7 +2,7 @@
 
 Decode `asn1` from a docx file.
 
-- question for @3gpp: why `docx` from for the specification ?
+- question for [@3gpp](https://www.3gpp.org/): why `docx` from for the specification ?
 - 3GPP ASN.1 available here <https://github.com/tramex/types_lte_3gpp/tree/main/asn>
 
 ## CLI

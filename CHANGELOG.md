@@ -14,6 +14,11 @@ python3 -m twine upload dist/* --verbose
 # enter token
 ```
 
+## 2025-10-20
+
+- edit README
+- proper bump of version
+
 ## 2025-10-18
 
 - add `python-docx` dependency

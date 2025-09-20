@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docx-asn1"
-version = "1.0.10"
+version = "1.1.0"
 description = "Extract ASN.1 from DOCX files"
 readme = "README.md"
 authors = [{ name = "n4n5", email = "its.just.n4n5@gmail.com" }]
